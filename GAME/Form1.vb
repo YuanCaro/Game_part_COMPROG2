@@ -110,13 +110,13 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If canMove Then
-            MoveVertical(Red1, 137, 590, Red1GoingDown, Red1GoingDown)
-            MoveVertical(Red2, 137, 590, Red2GoingDown, Red2GoingDown)
-            MoveVertical(Cat1, 137, 478, Cat1GoingDown, Cat1GoingDown)
-            MoveHorizontal(Red3, 1164, 1288, Red3GoingRight, Red3GoingRight)
-            MoveHorizontal(Red4, 1164, 1288, Red4GoingRight, Red4GoingRight)
-            MoveHorizontal(Red5, 1164, 1288, Red5GoingRight, Red5GoingRight)
-            MoveHorizontal(Red6, 1164, 1288, Red6GoingRight, Red6GoingRight)
+            MoveVertical(Red1, 137, 590, Red1GoingDown)
+            MoveVertical(Red2, 137, 590, Red2GoingDown)
+            MoveVertical(Cat1, 137, 478, Cat1GoingDown)
+            MoveHorizontal(Red3, 1164, 1288, Red3GoingRight)
+            MoveHorizontal(Red4, 1164, 1288, Red4GoingRight)
+            MoveHorizontal(Red5, 1164, 1288, Red5GoingRight)
+            MoveHorizontal(Red6, 1164, 1288, Red6GoingRight)
 
             If goUp Then MovePlayer(0, -speed)
             If goDown Then MovePlayer(0, speed)
@@ -140,7 +140,7 @@
         Next
     End Sub
 
-    Private Sub MoveVertical(enemy As PictureBox, minY As Integer, maxY As Integer, ByRef goingDown As Boolean, ByRef toggleFlag As Boolean)
+    Private Sub MoveVertical(enemy As PictureBox, minY As Integer, maxY As Integer, ByRef goingDown As Boolean)
         If goingDown Then
             enemy.Top += enemySpeed
             If enemy.Top >= maxY Then goingDown = False
@@ -150,7 +150,7 @@
         End If
     End Sub
 
-    Private Sub MoveHorizontal(enemy As PictureBox, minX As Integer, maxX As Integer, ByRef goingRight As Boolean, ByRef toggleFlag As Boolean)
+    Private Sub MoveHorizontal(enemy As PictureBox, minX As Integer, maxX As Integer, ByRef goingRight As Boolean)
         If goingRight Then
             enemy.Left += enemySpeed
             If enemy.Left >= maxX Then goingRight = False
@@ -159,6 +159,7 @@
             If enemy.Left <= minX Then goingRight = True
         End If
     End Sub
+
 
     Private Sub MovePlayer(dx As Integer, dy As Integer)
         PictureBox5.Left += dx

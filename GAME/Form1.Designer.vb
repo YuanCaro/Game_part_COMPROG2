@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         PictureBox1 = New PictureBox()
         PictureBox2 = New PictureBox()
         PictureBox3 = New PictureBox()
@@ -102,7 +103,7 @@ Partial Class Form1
         ' 
         ' Button1
         ' 
-        Button1.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button1.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button1.Location = New Point(385, 685)
         Button1.Name = "Button1"
         Button1.Size = New Size(197, 83)
@@ -113,9 +114,11 @@ Partial Class Form1
         ' PictureBox5
         ' 
         PictureBox5.BackColor = SystemColors.ActiveCaption
+        PictureBox5.Image = My.Resources.Resources.Screenshot_2026_02_06_100218
         PictureBox5.Location = New Point(239, 374)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(34, 35)
+        PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox5.TabIndex = 5
         PictureBox5.TabStop = False
         ' 
@@ -133,28 +136,33 @@ Partial Class Form1
         ' 
         ' Mango
         ' 
-        Mango.Image = My.Resources.Resources.MANGO_ICECREAM
+        Mango.Image = CType(resources.GetObject("Mango.Image"), Image)
         Mango.Location = New Point(1173, 137)
         Mango.Name = "Mango"
         Mango.Size = New Size(143, 126)
+        Mango.SizeMode = PictureBoxSizeMode.StretchImage
         Mango.TabIndex = 8
         Mango.TabStop = False
         ' 
         ' Red1
         ' 
         Red1.BackColor = Color.Brown
+        Red1.Image = My.Resources.Resources.Screenshot_2026_02_06_095957
         Red1.Location = New Point(589, 137)
         Red1.Name = "Red1"
         Red1.Size = New Size(71, 64)
+        Red1.SizeMode = PictureBoxSizeMode.StretchImage
         Red1.TabIndex = 9
         Red1.TabStop = False
         ' 
         ' Red2
         ' 
         Red2.BackColor = Color.Brown
+        Red2.Image = My.Resources.Resources.Screenshot_2026_02_06_100125
         Red2.Location = New Point(458, 590)
         Red2.Name = "Red2"
         Red2.Size = New Size(71, 64)
+        Red2.SizeMode = PictureBoxSizeMode.StretchImage
         Red2.TabIndex = 10
         Red2.TabStop = False
         ' 
@@ -206,42 +214,50 @@ Partial Class Form1
         ' Red3
         ' 
         Red3.BackColor = Color.Brown
+        Red3.Image = My.Resources.Resources.download__1_
         Red3.Location = New Point(1164, 283)
         Red3.Name = "Red3"
         Red3.Size = New Size(37, 18)
+        Red3.SizeMode = PictureBoxSizeMode.StretchImage
         Red3.TabIndex = 16
         Red3.TabStop = False
         ' 
         ' Red4
         ' 
         Red4.BackColor = Color.Brown
+        Red4.Image = My.Resources.Resources.download__1_
         Red4.Location = New Point(1288, 365)
         Red4.Name = "Red4"
         Red4.Size = New Size(37, 18)
+        Red4.SizeMode = PictureBoxSizeMode.StretchImage
         Red4.TabIndex = 17
         Red4.TabStop = False
         ' 
         ' Red5
         ' 
         Red5.BackColor = Color.Brown
+        Red5.Image = My.Resources.Resources.download__1_
         Red5.Location = New Point(1164, 443)
         Red5.Name = "Red5"
         Red5.Size = New Size(37, 18)
+        Red5.SizeMode = PictureBoxSizeMode.StretchImage
         Red5.TabIndex = 18
         Red5.TabStop = False
         ' 
         ' Red6
         ' 
         Red6.BackColor = Color.Brown
+        Red6.Image = My.Resources.Resources.download__1_
         Red6.Location = New Point(1288, 526)
         Red6.Name = "Red6"
         Red6.Size = New Size(37, 18)
+        Red6.SizeMode = PictureBoxSizeMode.StretchImage
         Red6.TabIndex = 19
         Red6.TabStop = False
         ' 
         ' Button2
         ' 
-        Button2.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button2.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button2.Location = New Point(182, 685)
         Button2.Name = "Button2"
         Button2.Size = New Size(197, 83)
@@ -251,9 +267,10 @@ Partial Class Form1
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1520, 777)
+        BackColor = SystemColors.ActiveCaption
+        ClientSize = New Size(1480, 778)
         Controls.Add(Button2)
         Controls.Add(Red6)
         Controls.Add(Red5)
