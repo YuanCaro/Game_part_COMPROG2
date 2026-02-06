@@ -45,6 +45,9 @@ Partial Class Form1
         Red5 = New PictureBox()
         Red6 = New PictureBox()
         Button2 = New Button()
+        ENDLESS = New Button()
+        Score = New Label()
+        High = New Label()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -68,7 +71,7 @@ Partial Class Form1
         ' PictureBox1
         ' 
         PictureBox1.BackColor = SystemColors.ActiveCaptionText
-        PictureBox1.Location = New Point(182, 112)
+        PictureBox1.Location = New Point(371, 257)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(1171, 19)
         PictureBox1.TabIndex = 0
@@ -77,7 +80,7 @@ Partial Class Form1
         ' PictureBox2
         ' 
         PictureBox2.BackColor = SystemColors.ActiveCaptionText
-        PictureBox2.Location = New Point(182, 660)
+        PictureBox2.Location = New Point(371, 805)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(1171, 19)
         PictureBox2.TabIndex = 1
@@ -86,7 +89,7 @@ Partial Class Form1
         ' PictureBox3
         ' 
         PictureBox3.BackColor = SystemColors.ActiveCaptionText
-        PictureBox3.Location = New Point(182, 127)
+        PictureBox3.Location = New Point(371, 272)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(22, 536)
         PictureBox3.TabIndex = 2
@@ -95,7 +98,7 @@ Partial Class Form1
         ' PictureBox4
         ' 
         PictureBox4.BackColor = SystemColors.ActiveCaptionText
-        PictureBox4.Location = New Point(1331, 127)
+        PictureBox4.Location = New Point(1520, 272)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(22, 536)
         PictureBox4.TabIndex = 3
@@ -104,7 +107,7 @@ Partial Class Form1
         ' Button1
         ' 
         Button1.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button1.Location = New Point(385, 685)
+        Button1.Location = New Point(574, 830)
         Button1.Name = "Button1"
         Button1.Size = New Size(197, 83)
         Button1.TabIndex = 4
@@ -115,7 +118,7 @@ Partial Class Form1
         ' 
         PictureBox5.BackColor = SystemColors.ActiveCaption
         PictureBox5.Image = My.Resources.Resources.Screenshot_2026_02_06_100218
-        PictureBox5.Location = New Point(239, 374)
+        PictureBox5.Location = New Point(428, 519)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(34, 35)
         PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
@@ -128,7 +131,7 @@ Partial Class Form1
         ' Cat1
         ' 
         Cat1.Image = My.Resources.Resources.CAT
-        Cat1.Location = New Point(833, 137)
+        Cat1.Location = New Point(1031, 282)
         Cat1.Name = "Cat1"
         Cat1.Size = New Size(288, 176)
         Cat1.TabIndex = 6
@@ -137,7 +140,7 @@ Partial Class Form1
         ' Mango
         ' 
         Mango.Image = CType(resources.GetObject("Mango.Image"), Image)
-        Mango.Location = New Point(1173, 137)
+        Mango.Location = New Point(1362, 282)
         Mango.Name = "Mango"
         Mango.Size = New Size(143, 126)
         Mango.SizeMode = PictureBoxSizeMode.StretchImage
@@ -148,7 +151,7 @@ Partial Class Form1
         ' 
         Red1.BackColor = Color.Brown
         Red1.Image = My.Resources.Resources.Screenshot_2026_02_06_095957
-        Red1.Location = New Point(589, 137)
+        Red1.Location = New Point(778, 282)
         Red1.Name = "Red1"
         Red1.Size = New Size(71, 64)
         Red1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -159,7 +162,7 @@ Partial Class Form1
         ' 
         Red2.BackColor = Color.Brown
         Red2.Image = My.Resources.Resources.Screenshot_2026_02_06_100125
-        Red2.Location = New Point(458, 590)
+        Red2.Location = New Point(647, 735)
         Red2.Name = "Red2"
         Red2.Size = New Size(71, 64)
         Red2.SizeMode = PictureBoxSizeMode.StretchImage
@@ -169,7 +172,7 @@ Partial Class Form1
         ' PictureBox6
         ' 
         PictureBox6.BackColor = SystemColors.ActiveCaptionText
-        PictureBox6.Location = New Point(743, 127)
+        PictureBox6.Location = New Point(932, 272)
         PictureBox6.Name = "PictureBox6"
         PictureBox6.Size = New Size(22, 106)
         PictureBox6.TabIndex = 11
@@ -178,7 +181,7 @@ Partial Class Form1
         ' PictureBox7
         ' 
         PictureBox7.BackColor = SystemColors.ActiveCaptionText
-        PictureBox7.Location = New Point(743, 557)
+        PictureBox7.Location = New Point(932, 702)
         PictureBox7.Name = "PictureBox7"
         PictureBox7.Size = New Size(22, 106)
         PictureBox7.TabIndex = 12
@@ -187,7 +190,7 @@ Partial Class Form1
         ' PictureBox8
         ' 
         PictureBox8.BackColor = SystemColors.ActiveCaptionText
-        PictureBox8.Location = New Point(330, 127)
+        PictureBox8.Location = New Point(519, 272)
         PictureBox8.Name = "PictureBox8"
         PictureBox8.Size = New Size(22, 106)
         PictureBox8.TabIndex = 13
@@ -196,7 +199,7 @@ Partial Class Form1
         ' PictureBox9
         ' 
         PictureBox9.BackColor = SystemColors.ActiveCaptionText
-        PictureBox9.Location = New Point(330, 557)
+        PictureBox9.Location = New Point(519, 702)
         PictureBox9.Name = "PictureBox9"
         PictureBox9.Size = New Size(22, 106)
         PictureBox9.TabIndex = 14
@@ -205,7 +208,7 @@ Partial Class Form1
         ' PictureBox10
         ' 
         PictureBox10.BackColor = SystemColors.ActiveCaptionText
-        PictureBox10.Location = New Point(1136, 127)
+        PictureBox10.Location = New Point(1325, 272)
         PictureBox10.Name = "PictureBox10"
         PictureBox10.Size = New Size(22, 417)
         PictureBox10.TabIndex = 15
@@ -215,7 +218,7 @@ Partial Class Form1
         ' 
         Red3.BackColor = Color.Brown
         Red3.Image = My.Resources.Resources.download__1_
-        Red3.Location = New Point(1164, 283)
+        Red3.Location = New Point(1353, 428)
         Red3.Name = "Red3"
         Red3.Size = New Size(37, 18)
         Red3.SizeMode = PictureBoxSizeMode.StretchImage
@@ -226,7 +229,7 @@ Partial Class Form1
         ' 
         Red4.BackColor = Color.Brown
         Red4.Image = My.Resources.Resources.download__1_
-        Red4.Location = New Point(1288, 365)
+        Red4.Location = New Point(1477, 510)
         Red4.Name = "Red4"
         Red4.Size = New Size(37, 18)
         Red4.SizeMode = PictureBoxSizeMode.StretchImage
@@ -237,7 +240,7 @@ Partial Class Form1
         ' 
         Red5.BackColor = Color.Brown
         Red5.Image = My.Resources.Resources.download__1_
-        Red5.Location = New Point(1164, 443)
+        Red5.Location = New Point(1353, 588)
         Red5.Name = "Red5"
         Red5.Size = New Size(37, 18)
         Red5.SizeMode = PictureBoxSizeMode.StretchImage
@@ -248,7 +251,7 @@ Partial Class Form1
         ' 
         Red6.BackColor = Color.Brown
         Red6.Image = My.Resources.Resources.download__1_
-        Red6.Location = New Point(1288, 526)
+        Red6.Location = New Point(1477, 671)
         Red6.Name = "Red6"
         Red6.Size = New Size(37, 18)
         Red6.SizeMode = PictureBoxSizeMode.StretchImage
@@ -258,19 +261,52 @@ Partial Class Form1
         ' Button2
         ' 
         Button2.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button2.Location = New Point(182, 685)
+        Button2.Location = New Point(371, 830)
         Button2.Name = "Button2"
         Button2.Size = New Size(197, 83)
         Button2.TabIndex = 20
         Button2.Text = "NORMAL MODE"
         Button2.UseVisualStyleBackColor = True
         ' 
+        ' ENDLESS
+        ' 
+        ENDLESS.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        ENDLESS.Location = New Point(778, 830)
+        ENDLESS.Name = "ENDLESS"
+        ENDLESS.Size = New Size(197, 83)
+        ENDLESS.TabIndex = 21
+        ENDLESS.Text = "ENDLESS MODE"
+        ENDLESS.UseVisualStyleBackColor = True
+        ' 
+        ' Score
+        ' 
+        Score.AutoSize = True
+        Score.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Score.Location = New Point(1394, 222)
+        Score.Name = "Score"
+        Score.Size = New Size(148, 32)
+        Score.TabIndex = 22
+        Score.Text = "Placeholder"
+        ' 
+        ' High
+        ' 
+        High.AutoSize = True
+        High.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        High.Location = New Point(371, 222)
+        High.Name = "High"
+        High.Size = New Size(148, 32)
+        High.TabIndex = 23
+        High.Text = "Placeholder"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
-        ClientSize = New Size(1480, 778)
+        ClientSize = New Size(1904, 1041)
+        Controls.Add(High)
+        Controls.Add(Score)
+        Controls.Add(ENDLESS)
         Controls.Add(Button2)
         Controls.Add(Red6)
         Controls.Add(Red5)
@@ -293,6 +329,7 @@ Partial Class Form1
         Controls.Add(PictureBox1)
         Name = "Form1"
         Text = "Form1"
+        WindowState = FormWindowState.Maximized
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
@@ -312,6 +349,7 @@ Partial Class Form1
         CType(Red5, ComponentModel.ISupportInitialize).EndInit()
         CType(Red6, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
@@ -338,5 +376,8 @@ Partial Class Form1
     Friend WithEvents PictureBox15 As PictureBox
     Friend WithEvents Red6 As PictureBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents ENDLESS As Button
+    Friend WithEvents Score As Label
+    Friend WithEvents High As Label
 
 End Class

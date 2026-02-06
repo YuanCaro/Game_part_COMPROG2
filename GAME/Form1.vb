@@ -7,7 +7,7 @@
     Dim speed As Integer = 5
 
     Dim canMove As Boolean = False
-    Dim enemySpeed As Integer = 6
+    Dim enemySpeed As Integer = 5
 
     Dim walls As New List(Of PictureBox)
     Dim deathZones As New List(Of PictureBox)
@@ -20,8 +20,12 @@
     Dim Red6GoingRight As Boolean = False
     Dim Cat1GoingDown As Boolean = True
 
-    Dim startX As Integer = 239
-    Dim startY As Integer = 374
+    Dim startX As Integer = 428
+    Dim startY As Integer = 519
+
+    Dim endlessMode As Boolean = False
+    Dim Cscore As Integer = 0
+    Dim highScore As Integer = 0
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.KeyPreview = True
@@ -54,16 +58,21 @@
         canMove = True
         enemySpeed = If(easyMode, 4, 6)
 
+        Cscore = 0
+        Score.Text = "Score: 0"
+        High.Text = "High score: " & highScore
+
+
         PictureBox5.Left = startX
         PictureBox5.Top = startY
 
-        Red1.Top = 137
-        Red2.Top = 590
-        Red3.Left = 1164
-        Red4.Left = 1288
-        Red5.Left = 1164
-        Red6.Left = 1288
-        Cat1.Top = 137
+        Red1.Top = 282
+        Red2.Top = 735
+        Red3.Left = 1353
+        Red4.Left = 1477
+        Red5.Left = 1353
+        Red6.Left = 1477
+        Cat1.Top = 282
 
         Red1GoingDown = True
         Red2GoingDown = False
@@ -80,6 +89,7 @@
 
         Timer1.Enabled = True
     End Sub
+
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -110,13 +120,13 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If canMove Then
-            MoveVertical(Red1, 137, 590, Red1GoingDown)
-            MoveVertical(Red2, 137, 590, Red2GoingDown)
-            MoveVertical(Cat1, 137, 478, Cat1GoingDown)
-            MoveHorizontal(Red3, 1164, 1288, Red3GoingRight)
-            MoveHorizontal(Red4, 1164, 1288, Red4GoingRight)
-            MoveHorizontal(Red5, 1164, 1288, Red5GoingRight)
-            MoveHorizontal(Red6, 1164, 1288, Red6GoingRight)
+            MoveVertical(Red1, 282, 735, Red1GoingDown)
+            MoveVertical(Red2, 282, 735, Red2GoingDown)
+            MoveVertical(Cat1, 282, 623, Cat1GoingDown)
+            MoveHorizontal(Red3, 1353, 1477, Red3GoingRight)
+            MoveHorizontal(Red4, 1353, 1477, Red4GoingRight)
+            MoveHorizontal(Red5, 1353, 1477, Red5GoingRight)
+            MoveHorizontal(Red6, 1353, 1477, Red6GoingRight)
 
             If goUp Then MovePlayer(0, -speed)
             If goDown Then MovePlayer(0, speed)
@@ -125,16 +135,40 @@
         End If
 
         If PictureBox5.Bounds.IntersectsWith(Mango.Bounds) Then
-            Timer1.Enabled = False
-            MessageBox.Show("You win!")
-            canMove = False
+            If endlessMode Then
+                Cscore += 1
+                enemySpeed += 1
+
+                Score.Text = "Score: " & Cscore
+
+                If Cscore > highScore Then
+                    highScore = Cscore
+                    High.Text = "High score: " & highScore
+                End If
+
+
+                PictureBox5.Left = startX
+                PictureBox5.Top = startY
+            Else
+                Timer1.Enabled = False
+                MessageBox.Show("You win!")
+                canMove = False
+            End If
         End If
+
 
         For Each death As PictureBox In deathZones
             If PictureBox5.Bounds.IntersectsWith(death.Bounds) Then
                 Timer1.Enabled = False
-                MessageBox.Show("You died!")
                 canMove = False
+
+                If endlessMode Then
+                    MessageBox.Show("You died!" & vbCrLf & "Score: " & Cscore & vbCrLf & "High score: " & highScore)
+                    endlessMode = False
+                Else
+                    MessageBox.Show("You died!")
+                End If
+
                 Exit For
             End If
         Next
@@ -183,4 +217,8 @@
         Return False
     End Function
 
+    Private Sub ENDLESS_Click(sender As Object, e As EventArgs) Handles ENDLESS.Click
+        endlessMode = True
+        StartGame(False)
+    End Sub
 End Class
